@@ -1,5 +1,3 @@
-# Etapa 1: Construcción con Maven y Java 17
-# Usamos una imagen oficial que ya tiene Maven y Java 17 listos.
 FROM maven:3.8.5-openjdk-17 AS build
 
 # Creamos un directorio de trabajo dentro del contenedor
@@ -12,8 +10,8 @@ COPY . .
 RUN mvn clean install -DskipTests
 
 # Etapa 2: Ejecución
-# Usamos una imagen más ligera que solo tiene lo necesario para ejecutar Java.
-FROM openjdk:17-jre-slim
+# Usamos una imagen de Eclipse Temurin, una alternativa robusta y muy común.
+FROM eclipse-temurin:17-jre-alpine
 
 # Creamos un directorio de trabajo
 WORKDIR /app
