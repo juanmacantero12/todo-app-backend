@@ -1,3 +1,5 @@
+# Etapa 1: Construcción con Maven y Java 17
+# Usamos una imagen oficial que ya tiene Maven y Java 17 listos.
 FROM maven:3.8.5-openjdk-17 AS build
 
 # Creamos un directorio de trabajo dentro del contenedor
